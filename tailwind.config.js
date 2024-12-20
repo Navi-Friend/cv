@@ -1,8 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./src/**/*.{js,jsx,ts,tsx}'],
+	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				CVGray: '#323b4c',
+				CVBlue: '#188FA7',
+			},
+			fontFamily: {
+				lato: ['Lato', 'sans-serif'],
+			},
+		},
 	},
 	plugins: [],
 };
