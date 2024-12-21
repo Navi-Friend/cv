@@ -28,6 +28,8 @@ import NotionVideo from './assets/NotionVideo.mp4';
 import FilterableListVideo from './assets/FilterableListVideo.mp4';
 import APIVideo from './assets/APIVideo.mp4';
 
+import Portrait from './assets/Portrait.jpg';
+
 const CONTACT_INFO = [
 	{
 		title: 'Email',
@@ -251,7 +253,7 @@ function App() {
 	return (
 		<div className="flex min-h-screen font-lato mob:flex-col sm:flex-row">
 			<div className="sm:w-2/5 min-w-[270px] bg-CVGray pl-5 py-4 text-white lg:w-full">
-				<img src="" alt="profile photo" />
+				<img src={Portrait} alt="profile photo" className='w-1/2 ml-1 mb-3'/>
 				<SideParagraph title={'Contact'}>
 					{CONTACT_INFO.map((contact, i) => (
 						<ContactItem key={i} contact={contact}></ContactItem>
