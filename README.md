@@ -1,5 +1,6 @@
-# My CV
+# CV
 
+![CV](./image.png)
 
 ## Description
 
@@ -29,7 +30,7 @@ To get started with this project, follow these steps:
 
 1. Clone the repository:
     ```
-    git clone https://github.com/yourusername/my-cv.git
+    git clone https://github.com/Navi-Friend/cv.git
     ```
 2. Install necessary packages:
     ```

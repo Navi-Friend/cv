@@ -2,9 +2,32 @@ import ContactItem from './components/ContactItem';
 import EducationItem from './components/EducationItem';
 import SideParagraph from './components/SideSection';
 import SkillItem from './components/SkillItem';
+import TechnologyItem from './components/TechologyItem';
 
 import purpleSchoolLogo from './assets/purpleSchoolLogo.png';
 import BSULogo from './assets/BSULogo.png';
+import ReactLogo from './assets/ReactLogo.png';
+import ReduxLogo from './assets/ReduxLogo.png';
+import TailwindLogo from './assets/TailwindLogo.png';
+import { useState } from 'react';
+import ViteLogo from './assets/ViteLogo.png';
+import NodeJSLogo from './assets/NodeJSLogo.png';
+import ExpressLogo from './assets/ExpressLogo.png';
+import NestLogo from './assets/NestLogo.png';
+import MongoLogo from './assets/MongoLogo.png';
+import PostgresLogo from './assets/PostgresLogo.png';
+import FastAPILogo from './assets/FastAPILogo.png';
+import DjangoLogo from './assets/DjangoLogo.png';
+import TimelineItem from './components/TimeLine';
+import ProjectItem from './components/ProjectItem';
+
+import SupperVideo from './assets/SupperVideo.mp4';
+import LamodaVideo from './assets/LamodaVideo.mp4';
+import TodoistVideo from './assets/TodoistVideo.mp4';
+import NotionVideo from './assets/NotionVideo.mp4';
+import FilterableListVideo from './assets/FilterableListVideo.mp4';
+import APIVideo from './assets/APIVideo.mp4';
+
 const CONTACT_INFO = [
 	{
 		title: 'Email',
@@ -87,15 +110,147 @@ const EDUCATOIN_INFO = [
 
 const TECHNOLOGIES_INFO = [
 	{
-		imageSrc: '',
-		alt: '',
+		imageSrc: ReactLogo,
+		alt: 'React',
+	},
+	{
+		imageSrc: ReduxLogo,
+		alt: 'Redux',
+		className: '',
+	},
+	{
+		imageSrc: TailwindLogo,
+		alt: 'Tailwind',
+	},
+	{
+		imageSrc: ViteLogo,
+		alt: 'Vite',
+	},
+	{
+		imageSrc: NodeJSLogo,
+		alt: 'Node JS',
+	},
+	{
+		imageSrc: ExpressLogo,
+		alt: 'Express',
+	},
+	{
+		imageSrc: NestLogo,
+		alt: 'Nest JS',
+	},
+	{
+		imageSrc: MongoLogo,
+		alt: 'Mongo DB',
+	},
+	{
+		imageSrc: PostgresLogo,
+		alt: 'PostgreSQL',
+	},
+	{
+		imageSrc: FastAPILogo,
+		alt: 'FastAPI',
+	},
+	{
+		imageSrc: DjangoLogo,
+		alt: 'Django',
+	},
+];
+const WORK_INFO = [
+	{
+		year: '2021-2024',
+		title: 'Self-employment',
+		description:
+			'I have developed and maintained web applications for various clients using modern technologies such as JavaScript, React, Node.js, Express, and Python. During this time, I has successfully completed several projects. Interacted with clients to identify requirements and provide solutions tailored to their needs. Was engaged in self-education, studying new technologies and development tools in order to keep abreast of the latest trends in programming.',
+	},
+	{
+		year: '2023-2027',
+		title: 'Studying at the Belarusian State University',
+		description:
+			'I have been studying at Belarusian State University, majoring in mathematics and computer science. During my studies at the university, I acquired a solid foundation in programming languages such as C++, Java, JavaScript, and C#. I also learned about modern web technologies and created websites with complex front-end and back-end systems. I delved deeply into advanced mathematics, which improved my analytical and problem-solving abilities. My coursework included algorithms, data structures, networking, and software development principles, enabling me to gain a comprehensive understanding of computer science concepts. This rigorous academic background equipped me with the skills required to tackle complex programming problems and contribute effectively to software development projects.',
+	},
+	{
+		year: '2024',
+		title: 'Commercial Project',
+		description:
+			'At the request of one of a Belarusian university, my team and I designed and developed the "Bench Of Love" website, which was successfully launched and is now operating in the city of Mogilev. For this project, I worked on the backend using Node.js, Express, MongoDB, and Mongoose. I created a registration and authentication system using JWT from scratch and developed an API for the entire website. I wrote API documentation and created a database schema. I also actively collaborated with the frontend team to ensure smooth communication and deployment of the project on a remote server.',
+	},
+];
+
+const PROJECTS_INFO = [
+	{
+		videoSrc: NotionVideo,
+		technologies: [
+			'React',
+			'Redux',
+			'Zod',
+			'TailwindCSS',
+			'Vite',
+			'Json-Server',
+			'React Router',
+		],
+		title: 'Notion',
+		description:
+			'Notion web service, developped with React, Redux, TailwindCSS, Vite and Json-Server as a database. There is registration and authorization, supports of creating, changing and deleting of notes.',
+		link: 'https://github.com/Navi-Friend/React-Notion-Redux',
+	},
+	{
+		videoSrc: LamodaVideo,
+		technologies: ['React', 'TailwindCSS', 'Vite'],
+		title: 'Online store',
+		description:
+			'An online store like Lamoda written on React, TailwindCSS, Vite. The main concept of application is differentiation of fileters and catalog components for convenience and scalability. The main aim of development was to create the system, supporting easy adding and removing of filters.',
+		link: 'https://github.com/Navi-Friend/lamoda',
+	},
+	{
+		videoSrc: APIVideo,
+		technologies: [
+			'React',
+			'React Router',
+			'Vite',
+			'TailwindCSS',
+			'Json Placeholder',
+		],
+		title: 'API Service',
+		description:
+			'Web site, connected to Json Placeholder and giving the ability to get users, their albums and photos. Project supplies fetch handling and different loading to smooth out the server operations.',
+		link: 'https://github.com/Navi-Friend/api-spa',
+	},
+	{
+		videoSrc: SupperVideo,
+		technologies: ['Pure JS', 'HTML', 'CSS', 'Live Server'],
+		title: 'Supper Game',
+		description:
+			'A supper game with ability to increase a game field, number of bombs and other. It writter on pure JavaScript, using pattern of differentiation of logic and rendering parts.',
+		link: 'https://github.com/Navi-Friend/supper.git',
+	},
+	{
+		videoSrc: TodoistVideo,
+		technologies: ['React', 'Zod', 'Vite', 'CSS modules'],
+		title: 'Todoist',
+		description:
+			'The project of default Todo List, but with extra abilities. The site uses validation, fast rendering and minimal number of rerenders. You can choose different independent filters and sortings.',
+		link: 'https://github.com/Navi-Friend/todoist',
+	},
+	{
+		videoSrc: FilterableListVideo,
+		technologies: ['TypeScript', 'HTML', 'CSS', 'Json Placeholder'],
+		title: 'Filterable List',
+		description:
+			"Filterable List - is a project whose main purpose was reactive fetching of data from server. Site use validation of user's input and correct handling of specific symbols.",
+		link: 'https://github.com/Navi-Friend/filterable-list',
 	},
 ];
 
 function App() {
+	const [activeIndex, setActiveIndex] = useState(null);
+	const handleImageClick = (index) => {
+		console.log(index, activeIndex);
+		setActiveIndex(index === activeIndex ? null : index);
+	};
+
 	return (
-		<div className="flex min-h-screen font-lato">
-			<div className="w-1/3 min-w-[270px] bg-CVGray pl-5 py-4 text-white">
+		<div className="flex min-h-screen font-lato mob:flex-col sm:flex-row">
+			<div className="sm:w-2/5 min-w-[270px] bg-CVGray pl-5 py-4 text-white lg:w-full">
 				<img src="" alt="profile photo" />
 				<SideParagraph title={'Contact'}>
 					{CONTACT_INFO.map((contact, i) => (
@@ -110,7 +265,7 @@ function App() {
 					)}
 				</SideParagraph>
 				<SideParagraph title={'Languages'}>
-					<h3 className="py-1">English B1</h3>
+					<h3 className="py-1">English B2</h3>
 					<h3 className="py-1">Russian Native</h3>
 				</SideParagraph>
 			</div>
@@ -132,6 +287,47 @@ function App() {
 						and challenging tasks.
 					</p>
 				</section>
+
+				<h2 className="font-bold text-CVGray text-4xl mt-14">
+					Work Experience
+				</h2>
+				<div className="h-[2px] bg-CVGray my-2 "></div>
+				<section>
+					<div className="flex flex-col items-start">
+						{WORK_INFO.map((item, index) => (
+							<TimelineItem
+								key={index}
+								year={item.year}
+								title={item.title}
+								description={item.description}
+							/>
+						))}
+					</div>
+				</section>
+				<h2 className="font-bold text-CVGray text-4xl mt-14">
+					Projects
+				</h2>
+				<div className="h-[2px] bg-CVGray my-2 "></div>
+				<section className="grid lg:grid-cols-2 gap-5 md:grid-cols-2 grid-cols-1 justify-items-center">
+					{PROJECTS_INFO.map((project, i) => (
+						<ProjectItem key={i} project={project}></ProjectItem>
+					))}
+				</section>
+
+				<h2 className="font-bold text-CVGray text-4xl mt-14">
+					Technologies
+				</h2>
+				<div className="h-[2px] bg-CVGray my-2 "></div>
+				<section className="flex flex-wrap gap-3 pt-4">
+					{TECHNOLOGIES_INFO.map((technology, i) => (
+						<TechnologyItem
+							key={i}
+							technology={technology}
+							isActive={activeIndex === i}
+							onClick={() => handleImageClick(i)}
+						></TechnologyItem>
+					))}
+				</section>
 				<h2 className="font-bold text-CVGray text-4xl mt-14">
 					Education
 				</h2>
@@ -142,19 +338,6 @@ function App() {
 							key={i}
 							education={educatoin}
 						></EducationItem>
-					))}
-				</section>
-				<h2 className="font-bold text-CVGray text-4xl mt-14">
-					Technologies
-				</h2>
-				<div className="h-[2px] bg-CVGray my-2 "></div>
-				<section className="flex flex-wrap flex-col">
-					{TECHNOLOGIES_INFO.map((technology, i) => (
-						<img
-							key={i}
-							src={technology.imageSrc}
-							alt={technology.alt}
-						/>
 					))}
 				</section>
 			</div>

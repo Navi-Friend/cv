@@ -10,6 +10,9 @@ export default {
 			fontFamily: {
 				lato: ['Lato', 'sans-serif'],
 			},
+			screens: {
+				mob: '300px',
+			},
 		},
 	},
 	plugins: [],
