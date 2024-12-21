@@ -253,7 +253,11 @@ function App() {
 	return (
 		<div className="flex min-h-screen font-lato mob:flex-col sm:flex-row">
 			<div className="sm:w-2/5 min-w-[270px] bg-CVGray pl-5 py-4 text-white lg:w-full">
-				<img src={Portrait} alt="profile photo" className='w-1/2 ml-1 mb-3'/>
+				<img
+					src={Portrait}
+					alt="profile photo"
+					className="w-1/2 ml-1 mb-3"
+				/>
 				<SideParagraph title={'Contact'}>
 					{CONTACT_INFO.map((contact, i) => (
 						<ContactItem key={i} contact={contact}></ContactItem>

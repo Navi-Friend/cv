@@ -11,6 +11,7 @@ export default function ProjectItem({ project }) {
 					autoPlay
 					loop
 					muted
+					preload="none"
 					className="block max-w-full  w-auto border-none"
 				>
 					<source src={project.videoSrc} type="video/mp4" />
