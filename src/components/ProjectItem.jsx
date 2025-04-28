@@ -7,16 +7,20 @@ export default function ProjectItem({ project }) {
 				target="_blank"
 				rel="noreferrer"
 			>
-				<video
-					autoPlay
-					loop
-					muted
-					preload="none"
-					className="block max-w-full  w-auto border-none"
-				>
-					<source src={project.videoSrc} type="video/mp4" />
-					Your browser does not support the video tag.
-				</video>
+				{project.videoSrc ? (
+					<video
+						autoPlay
+						loop
+						muted
+						preload="none"
+						className="block max-w-full  w-auto border-none"
+					>
+						<source src={project.videoSrc} type="video/mp4" />
+						Your browser does not support the video tag.
+					</video>
+				) : (
+					<img src={project.imageSrc} alt="" />
+				)}
 			</a>
 			<div className="flex flex-col gap-4 justify-between h-full">
 				<div>

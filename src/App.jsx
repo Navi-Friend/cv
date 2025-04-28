@@ -28,6 +28,8 @@ import NotionVideo from './assets/NotionVideo.mp4';
 import FilterableListVideo from './assets/FilterableListVideo.mp4';
 import APIVideo from './assets/APIVideo.mp4';
 
+import QuiplashLogo from './assets/quiplashGIF.gif';
+
 import Portrait from './assets/Portrait.jpg';
 
 const CONTACT_INFO = [
@@ -61,28 +63,44 @@ const CONTACT_INFO = [
 			</a>
 		),
 	},
+	{
+		title: 'Telegram',
+		element: (
+			<a href="https://github.com/Navi-Friend">
+				<img
+					src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1200px-Telegram_logo.svg.png"
+					alt="Telegram"
+					width={30}
+				/>
+			</a>
+		),
+	},
 ];
 
 const EXPERTISE_INFO = [
 	{
 		title: 'NodeJS',
-		progress: 50,
+		progress: 80,
 	},
 	{
-		title: 'NestJS',
-		progress: 20,
+		title: 'Express',
+		progress: 75,
 	},
+	// {
+	// 	title: 'NestJS',
+	// 	progress: 20,
+	// },
 	{
 		title: 'React',
 		progress: 80,
 	},
 	{
-		title: 'Python',
-		progress: 45,
+		title: 'MongoDB',
+		progress: 58,
 	},
 	{
 		title: 'Mathematics',
-		progress: 74,
+		progress: 44,
 	},
 ];
 
@@ -159,26 +177,51 @@ const TECHNOLOGIES_INFO = [
 ];
 const WORK_INFO = [
 	{
-		year: '2021-2024',
-		title: 'Self-employment',
-		description:
-			'I have developed and maintained web applications for various clients using modern technologies such as JavaScript, React, Node.js, Express, and Python. During this time, I has successfully completed several projects. Interacted with clients to identify requirements and provide solutions tailored to their needs. Was engaged in self-education, studying new technologies and development tools in order to keep abreast of the latest trends in programming.',
-	},
-	{
-		year: '2023-2027',
-		title: 'Studying at the Belarusian State University',
-		description:
-			'I have been studying at Belarusian State University, majoring in mathematics and computer science. During my studies at the university, I acquired a solid foundation in programming languages such as C++, Java, JavaScript, and C#. I also learned about modern web technologies and created websites with complex front-end and back-end systems. I delved deeply into advanced mathematics, which improved my analytical and problem-solving abilities. My coursework included algorithms, data structures, networking, and software development principles, enabling me to gain a comprehensive understanding of computer science concepts. This rigorous academic background equipped me with the skills required to tackle complex programming problems and contribute effectively to software development projects.',
-	},
-	{
 		year: '2024',
 		title: 'Commercial Project',
 		description:
 			'At the request of one of a Belarusian university, my team and I designed and developed the "Bench Of Love" website, which was successfully launched and is now operating in the city of Mogilev. For this project, I worked on the backend using Node.js, Express, MongoDB, and Mongoose. I created a registration and authentication system using JWT from scratch and developed an API for the entire website. I wrote API documentation and created a database schema. I also actively collaborated with the frontend team to ensure smooth communication and deployment of the project on a remote server.',
 	},
+	{
+		year: `2023-${new Date().getFullYear()}`,
+		title: 'Self-employment',
+		description:
+			// 'I have developed and maintained web applications for various clients using modern technologies such as JavaScript, React, Node.js, Express, and Python. During this time, I has successfully completed several projects. Interacted with clients to identify requirements and provide solutions tailored to their needs. Was engaged in self-education, studying new technologies and development tools in order to keep abreast of the latest trends in programming.',
+			`I actively working on my own projects using Express, React, TypeScript.
+			Now I'm working on Web Game like Jackbox Quiplash.
+			I write it using express, websockets, redis, postgreSQL.
+			All code in docker containers. 
+			I fully developed database, needed entitties, realized game logic. As the main database for
+			game session I used Redis because of it's low latency. As database for questoins I used postgreSQL.
+			Now project in development, but you can see it on my GitHub :).
+			`,
+	},
+	{
+		year: '2023-2027',
+		title: 'Studying at the Belarusian State University',
+		description:
+			'I have been studying at Belarusian State University, majoring in mathematics and computer science. During my studies at the university, I acquired a solid foundation in programming languages such as C++, Java, JavaScript, and C#. I also learned about modern web technologies and created websites with complex front-end and back-end systems. I delved deeply into advanced mathematics, which improved my analytical and problem-solving abilities. My coursework included algorithms, data structures, networking, and software development principles, enabling me to gain a comprehensive understanding of computer science concepts.',
+	},
 ];
 
 const PROJECTS_INFO = [
+	{
+		videoSrc: '',
+		imageSrc: QuiplashLogo,
+		technologies: [
+			'TypeScript',
+			'Express',
+			'Socket.io',
+			'Redis',
+			'Inversify',
+			'TailwindCSS',
+			'Vite',
+		],
+		title: 'Quiplash',
+		description: `Quiplash web game, is the analogue of famous one developped with Node.js, Express, Socket.io, React, Redux, TailwindCSS, Vite and as a database Redis + PostgreSQL. 
+			In game players create room with friends and trying to answer silly questions. Those who answered more funny - wins!`,
+		link: 'https://github.com/Navi-Friend/quiplash-copy',
+	},
 	{
 		videoSrc: NotionVideo,
 		technologies: [
@@ -284,13 +327,15 @@ function App() {
 						Web Developer
 					</h2>
 					<p className="mt-4 font-mono">
-						I have been working in IT for more than 2 years. I have
-						many experiences working individually and as a team
-						member. My principles in working are responsibility and
-						quality, because the key to team success is quality work
-						completed on time. My goal is to continue learning new
-						things and exploring new horizonts by doing interesting
-						and challenging tasks.
+						Hi, I'm Ivan, student of 2 course of Mechanics and
+						Mathematics faculty of BSU. I have been learning
+						JavaScript for 1,5 years. Now I have some experience in
+						Node.js, TypeScript, React, Express etc. and really want
+						to try myself in real projects. I have experiences
+						working as a team member using Git (almost comercial
+						priject with my groupmates). I can write both Frontend
+						and Backend. My position is to write good maintainable
+						code for generations.
 					</p>
 				</section>
 
